@@ -9,10 +9,9 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  @Input({required:true}) img: string='';
-  @Input() name: string='';
-  @Input() price: number=0;
-  @Input() description: string='';
+  @Input({required: true}) img: string = '';
+  @Input({required: true}) price: number = 0;
+  @Input({required: true}) title: string = '';
 
   @Output() addToCart= new EventEmitter();
 
