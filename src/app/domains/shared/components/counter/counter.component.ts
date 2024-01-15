@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, signal } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -11,6 +11,8 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 export class CounterComponent {
   @Input({required: true}) duration = 0;
   @Input({required: true}) message='';
+  counter = signal(0);
+  counterRef: number | undefined;
 
 
   constructor(){
@@ -38,5 +40,20 @@ export class CounterComponent {
     console.log('message =>', this.message);
 
 
+  }
+  ngAfterViewInit(){
+    // After render
+    // Cuando los hijos ya fueron pintados
+    // Una vez
+    // async, then, subs
+    console.log('ngAfterViewInit');
+    console.log('-'.repeat(10));
+  }
+  ngOnDestroy(){
+    // Before destroy
+    // Una vez
+    // async, then, subs
+    console.log('ngOnDestroy');
+    console.log('-'.repeat(10));
   }
 }
