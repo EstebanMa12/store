@@ -42,6 +42,11 @@ export class CounterComponent {
     console.log('-'.repeat(10));
     console.log('duration =>', this.duration);
     console.log('message =>', this.message);
+    window.setInterval(() =>{
+      console.log('run Interval');
+
+      this.counter.update(statePrev => statePrev + 1)
+    },1000)
 
 
   }
