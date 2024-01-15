@@ -1,11 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { log } from 'console';
-import { repeat } from 'rxjs';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })
@@ -17,6 +16,7 @@ export class CounterComponent {
   constructor(){
     //NO ASYNC
     // Before render
+    // Una vez
     console.log('constructor');
     console.log('-'.repeat(10));
 
@@ -26,5 +26,17 @@ export class CounterComponent {
     console.log('ngOnChanges');
     console.log('-'.repeat(10));
     console.log(changes);
+  }
+
+  ngOnInit(){
+    // After render
+    // Una vez
+    // async, then, subs
+    console.log('ngOnInit');
+    console.log('-'.repeat(10));
+    console.log('duration =>', this.duration);
+    console.log('message =>', this.message);
+
+
   }
 }
