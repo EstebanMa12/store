@@ -10,6 +10,12 @@ import { ProductComponent } from '../../components/product/product.component';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  
+  // Leyendo el output del hijo
+  fromChild(event:string){
+    console.log('click from parent');
+    console.log(event);
+
+  }
+
 
 }
