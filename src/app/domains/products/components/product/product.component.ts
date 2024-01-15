@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  @Input() img: string='';
+  @Input({required:true}) img: string='';
   @Input() name: string='';
   @Input() price: number=0;
   @Input() description: string='';
