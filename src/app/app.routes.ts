@@ -1,15 +1,15 @@
 import { Routes } from '@angular/router';
 
 import { ListComponent } from './domains/products/pages/list/list.component';
-
+import { AboutComponent } from './domains/info/pages/about/about.component';
 export const routes: Routes = [
+
   {
     path: '',
-    redirectTo: 'products',
-    pathMatch: 'full'
+    component: ListComponent
   },
   {
-    path: 'products',
-    component: ListComponent
+    path: 'about',
+    component: AboutComponent
   }
 ];
