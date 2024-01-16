@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Product } from '../../../shared/models/product.model';
+import { CommonModule } from '@angular/common';
 // import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
