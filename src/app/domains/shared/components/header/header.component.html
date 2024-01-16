@@ -40,7 +40,7 @@
     </div>
     <div class="flex items-center">
       <button class="p-2 border rounded relative" (click)="toggleSideMenu()">
-        @if(cart.length>0){<div class="border
+        @if(cart().length>0){<div class="border
         rounded-full
         bg-blue-500
         text-white
@@ -53,8 +53,10 @@
         flex
         justify-center
         items-center
+        font-bold
+        shadow-md
         ">
-          {{cart.length}}
+          {{cart().length}}
         </div>}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +101,7 @@
   </div>
   <div>
     <div>
-      @for(product of cart; track product.id){
+      @for(product of cart(); track product.id){
         <div>
           <a href="#" class="m-3
           flex flex-col
