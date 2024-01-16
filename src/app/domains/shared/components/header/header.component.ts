@@ -20,12 +20,20 @@ export class HeaderComponent {
     this.hideSideMenu.update(prevState => !prevState)
   }
 
+  // Así se hace el cálculo del total de los productos del carrito
+  // Sin problemas de rendimiento
   ngOnChanges(changes: SimpleChanges){
     if(changes['cart']){
       this.total.update(()=>this.getTotal());
     }
 
   }
+
+  // Es recomendable no hacer un llamado a la función getTotal() en el template
+  // Porque se ejecuta en cada ciclo de detección de cambios
+  // Por lo que se puede hacer un cálculo del total de los productos del carrito
+  // En el método ngOnChanges() y luego actualizar el total con el método update()
+  
   getTotal(){
     return this.cart.reduce((acc, product) => acc + product.price, 0);
   }
