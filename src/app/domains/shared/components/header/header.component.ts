@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 
 @Component({
@@ -10,5 +10,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  hideSideMenu = signal<boolean>(true);
 
+  toggleSideMenu(){
+    this.hideSideMenu.update(prevState => !prevState)
+  }
 }
