@@ -39,7 +39,23 @@
       </ul>
     </div>
     <div class="flex items-center">
-      <button class="px-4" (click)="toggleSideMenu()">
+      <button class="p-2 border rounded relative" (click)="toggleSideMenu()">
+        @if(cart.length>0){<div class="border
+        rounded-full
+        bg-blue-500
+        text-white
+        absolute
+        -top-2
+        -right-1
+        h-5
+        w-5
+        text-xs
+        flex
+        justify-center
+        items-center
+        ">
+          {{cart.length}}
+        </div>}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -80,5 +96,13 @@
         />
       </svg>
     </button>
+  </div>
+  <div>
+    <div>
+      @for(product of cart; track product.id){
+        <p>{{product.title}}</p>
+        <p>{{product.price}}</p>
+      }
+    </div>
   </div>
 </div>

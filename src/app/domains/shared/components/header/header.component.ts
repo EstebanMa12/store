@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
+import { Product } from '../../models/product.model';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Component, signal } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  @Input({required:true}) cart:Product[] = [];
   hideSideMenu = signal<boolean>(true);
 
   toggleSideMenu(){
