@@ -26,16 +26,11 @@ export class ListComponent {
   @Input() category_id?: string;
 
   ngOnInit() {
-    this.getProducts();
-    this.getProductsByCategory();
+    this.getCategories();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const category_id = changes['category_id']
-    if (category_id){
       this.getProducts();
-    }
-
   }
 
 
@@ -51,7 +46,7 @@ export class ListComponent {
       error: (err) => console.error(err),
     });
   }
-  private getProductsByCategory(){
+  private getCategories(){
     this.categoryService.getCategories().subscribe({
       next: (data) => {
         this.categories.set(data);
