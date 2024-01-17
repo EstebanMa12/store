@@ -1,14 +1,15 @@
 <div class="flex space-x-4 p-4" >
-  <div>
+  <div class="w-80">
     <ul>
+      <li routerLink="/" routerLinkActive="underline" [routerLinkActiveOptions]="{exact:true}">All</li>
      @for(category of categories(); track $index){
       <li>
-        <a href="">{{category.name}}</a>
+        <a routerLink="/" [queryParams]="{ category_id: category.id }" routerLinkActive="underline" >{{category.name}}</a>
       </li>
     }
     </ul>
   </div>
-  <div class="grid grid-cols-4 gap-8 ">
+  <div class="grid grid-cols-4 gap-8 w-full">
     @for(product of products(); track $index){
       <app-product
         [product]="product"
