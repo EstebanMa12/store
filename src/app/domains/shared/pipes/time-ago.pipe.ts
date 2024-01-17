@@ -7,8 +7,8 @@ import { formatDistance } from 'date-fns';
 })
 export class TimeAgoPipe implements PipeTransform {
 
-  transform(value: string): string {
-    const date = new Date(value);
+  transform(value: Date): string {
+    const date = value;
     const today = new Date();
     return formatDistance(today, date);
   }
