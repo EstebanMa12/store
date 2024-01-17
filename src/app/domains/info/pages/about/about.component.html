@@ -1,16 +1,19 @@
-<div class="px-10">
-  <h1 class="text-lg font-bold">About</h1>
-  <p class="
-  text-sm
-  text-red-500
-    bg-green-500
-    hover:bg-blue-500
-    hover:text-white
-    text-center
-    p-2
-  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span highlight>Nesciunt nulla sunt porro, quasi sapiente officiis </span>repudiandae iusto excepturi placeat eius vero ad repellendus eos rerum veniam neque quod ex sint?</p>
-  <p class="text-sm"> Numero de clientes  <app-counter [duration]="duration()" [message]="message()"/></p>
+<div class="container mx-auto">
+  <app-header/>
   <div>
-    <app-wave-audio audioUrl="assets/audio.mp3"/>
+    <h1 class="text-lg font-bold">About</h1>
+    <p class="
+    text-sm
+    text-red-500
+      bg-green-500
+      hover:bg-blue-500
+      hover:text-white
+      text-center
+      p-2
+    ">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span highlight>Nesciunt nulla sunt porro, quasi sapiente officiis </span>repudiandae iusto excepturi placeat eius vero ad repellendus eos rerum veniam neque quod ex sint?</p>
+    <p class="text-sm"> Numero de clientes  <app-counter [duration]="duration()" [message]="message()"/></p>
+    <div>
+      <app-wave-audio audioUrl="assets/audio.mp3"/>
+    </div>
   </div>
 </div>
